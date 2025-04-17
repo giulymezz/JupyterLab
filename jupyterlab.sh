@@ -10,7 +10,7 @@ DOCKERFILE="${DOCKERPATH}/Dockerfile"
 
 # Building the Docker image
 echo "🔨 Building Docker image: ${NAME}:${VERSION}"
-docker build --no-cache -t ${NAME}:${VERSION} -f ${DOCKERFILE} .
+docker buildx build --no-cache -t ${NAME}:${VERSION} -f ${DOCKERFILE} .
 
 # Check if the build failed
 if [ $? -ne 0 ]; then
